@@ -4,7 +4,7 @@ public class Main {
     private static final Scanner scan = new Scanner(System.in);
     private static final Controller controller = new Controller();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         while (true) {
             try {
                 System.out.println("Choose methods: ");
