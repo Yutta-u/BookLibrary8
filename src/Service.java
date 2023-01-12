@@ -1,6 +1,5 @@
 public class Service {
     private static final BookRepoStaticArray bookRepo = new BookRepoStaticArray();
-    private static final Exeptions exeption = new Exeptions();
 
     public String addBook(String name, String author, int pageCount) {
         if (Utils.isEmpty(name) || Utils.isEmpty(author) || pageCount < 0)
