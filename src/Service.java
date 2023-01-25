@@ -17,7 +17,7 @@ public class Service {
             if (value == null)
                 break;
             s.append(value);
-            s.append("\n"); // переводит на новую строчку, 2 раза экранирует
+            s.append("\n");
         }
         return s.toString();
     }
@@ -27,15 +27,9 @@ public class Service {
         if (book == null)
             return "Book is not search";
         switch (paramsName) {
-            case "name" -> {
-                book.setName(paramsValue);
-            }
-            case "author" -> {
-                book.setAuthor(paramsValue);
-            }
-            case "pageCount" -> {
-                book.setPageCount(Integer.parseInt(paramsValue));
-            }
+            case "name" -> book.setName(paramsValue);
+            case "author" -> book.setAuthor(paramsValue);
+            case "pageCount" -> book.setPageCount(Integer.parseInt(paramsValue));
         }
         bookRepo.update(id, book);
         return "OK";
