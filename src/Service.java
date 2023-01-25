@@ -23,7 +23,7 @@ public class Service {
     }
 
     public String update(int id, String paramsName, String paramsValue) {
-        Book book = bookRepo.get(id);
+        Book book = bookRepo.getId(id);
         if (book == null)
             return "Book is not search";
         switch (paramsName) {
@@ -36,15 +36,15 @@ public class Service {
     }
 
     public String getBook(int id) {
-        return bookRepo.get(id).toString();
+        return bookRepo.getId(id).toString();
     }
 
     public String getBook(String name) {
-        return bookRepo.get(name).toString();
+        return bookRepo.getName(name).toString();
     }
 
     public String delete(String name) {
-        if (bookRepo.delete() == null)
+        if (bookRepo.delete(name) == null)
             return "Deletion completed";
         return "Try again";
     }

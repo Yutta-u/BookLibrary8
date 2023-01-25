@@ -1,4 +1,4 @@
-public class BookRepoStaticArray implements ArrayList {
+public class BookRepoStaticArray implements IArrayList {
     private static int index = 0;
     private static final Book[] books = new Book[10];
 
@@ -6,14 +6,14 @@ public class BookRepoStaticArray implements ArrayList {
     public boolean save(Book book) {
         if (index == 10)
             return false;
-        if (get(book.getName()) != null)
+        if (getName(book.getName()) != null)
             return false;
         books[index++] = book;
         return true;
     }
 
     @Override
-    public Book get(String name)  {
+    public Book getName(String name)  {
         for (int i = 0; i < index; i++)
             if (books[i].getName().equals(name))
                 return books[i];
@@ -28,14 +28,15 @@ public class BookRepoStaticArray implements ArrayList {
         return books;
     }
 
-    public Book get(int id) {
+    public Book getId(int id) {
         return books[id];
     }
 
-
-    public Book delete() {
+    @Override
+    public boolean delete(String name) {
         return books[index] = null;
     }
+
 
     //TODO выводить ошибки. нету книги, перебор с кол-вом, выкидывать исключения
 }
