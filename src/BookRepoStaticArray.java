@@ -33,7 +33,7 @@ public class BookRepoStaticArray implements IArrayList {
     }
 
     @Override
-    public boolean delete(String name) {
+    public Book delete(String name) {
         return books[index] = null;
     }
 

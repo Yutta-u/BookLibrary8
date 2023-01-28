@@ -25,9 +25,9 @@ public class ArrayListRepo implements IArrayList {
     }
 
     @Override
-    public boolean delete(String name) {
+    public Book delete(String name) {
         list.remove(getName(name));
-        return false;
+        return null;
     }
 
     @Override
